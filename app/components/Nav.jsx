@@ -9,8 +9,18 @@ var Nav = React.createClass({
     
     onSearch: function (e) {
         e.preventDefault();
+    
+    var location = this.refs.locationSearch.value;
 
-        alert('Not yet wired up');
+
+    var encodedLocation = encodeURIComponent(location);
+
+    if(location.length > 0){
+        this.refs.locationSearch.value = '';
+        window.location.hash = '#/?location='+ encodedLocation;
+
+    }
+       
     },
 
     render: function () {
@@ -54,7 +64,7 @@ var Nav = React.createClass({
                             <ul className='menu'>
 
                                 <li>
-                                    <input type="search" placeholder='Search weather by city'/>
+                                    <input type="search" placeholder='Search weather by city' ref='locationSearch'/>
                                 </li>
 
                                 <li>
