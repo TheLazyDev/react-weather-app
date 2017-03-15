@@ -20,11 +20,14 @@ module.exports = {
                    throw new Error(res.data.message);
 
                } else {
-                   return res.data.main.temp;
+                   return res.data;
                }
-        }, function (res){
-               
-            throw new Error(res.data.message);
+        }, function (err){
+            
+            if(err){
+               throw new Error('Unable to fetch weather for that location');
+            }
+           
            
         });
     }
