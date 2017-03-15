@@ -19,7 +19,7 @@ require('style!css!foundation-sites/dist/css/foundation.min.css');
 
 // Load Custom Stylesheet
 
-require('style!css!applicationStyles');
+require('style!css!sass!applicationStyles');
 
 $(document).foundation();
 
